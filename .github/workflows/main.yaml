@@ -1,14 +1,16 @@
-name: 'Hello World'
-on: 
+name: 'create pull request'
+on:
   push:
-    branches: [master]
-
+    branches:
+    - develop
 
 jobs:
-  ci_to_master: 
+  pull-request:
     runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v2
-      run: npm ci
-      run: npm test
-      run: npm run build
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "master"
+        github_token: ${{ secrets.REPOSITORY_TOKEN }}
