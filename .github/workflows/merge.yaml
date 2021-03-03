@@ -5,14 +5,11 @@ on:
       - submitted
 jobs:
   automerge:
-    if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ubuntu-latest
     steps:
-      - uses: reitermarkus/automerge@v1
-        with:
-          token: ${{ secrets.REPOSITORY_TOKEN }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+    - uses: davideviolante/pr-automerge-action@v1.2.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
+      with:
+        merge-method: 'merge' # Default 'squash'
+        base-ref: 'master' # Default 'dev'
