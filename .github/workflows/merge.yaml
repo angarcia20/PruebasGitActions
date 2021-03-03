@@ -12,4 +12,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
       with:
         merge-method: 'merge' # Default 'squash'
-        base-ref: 'master' # Default 'dev'
+        base-ref: 'master' # Default 'devs'
