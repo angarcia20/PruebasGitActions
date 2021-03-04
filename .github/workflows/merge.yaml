@@ -6,8 +6,7 @@ on:
 jobs:
   automerge:
     - name: pruebas impresiones
-      run: |
-        'echo  Pull request FROM ${{ github.event.inputs.pull-request }}'
+      run: echo  'Pull request FROM ${{ github.event.inputs.pull-request }}'
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest  
     steps:
