@@ -5,5 +5,9 @@ on:
       - closed
 
 jobs:
-  - name: impresion
-    run: echo "esto significa que si imprime la accion"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Test
+      run: echo "esto significa que si imprime la accion"
