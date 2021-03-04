@@ -8,6 +8,7 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest  
     steps:
+      - uses: actions/checkout@v2
       - uses: reitermarkus/automerge@v1
         with:
           token: ${{ secrets.REPOSITORY_TOKEN }}
