@@ -1,17 +1,9 @@
-name: automerge
+name: push on main
 on:
-  pull_request_review:
+   pull_request:
     types:
-      - submitted
-jobs:
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
+      - closed
 
-      - name: Merge staging -> uat
-        uses: devmasx/merge-branch@v1.3.1
-        with:
-          type: now
-          target_branch: uat
-          github_token: ${{ github.REPOSITORY_TOKEN }}
+jobs:
+  - name: impresion
+    run: echo "esto significa que si imprime la accion"
