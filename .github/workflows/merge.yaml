@@ -5,12 +5,12 @@ on:
       - submitted
 jobs:
   automerge:
+    - name: pruebas impresiones
+      run: |
+        'echo  Pull request FROM ${{ github.event.inputs.pull-request }}'
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest  
     steps:
-    - name: pruebas impresiones
-      run: |
-        'echo  Pull request FROM "${{ github.event.inputs.pull-request }}"'
       - uses: reitermarkus/automerge@v1
         with:
           token: ${{ secrets.REPOSITORY_TOKEN }}
