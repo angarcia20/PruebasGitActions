@@ -11,11 +11,9 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Merge command
-      uses: Goobles/gh-actions-merge-command@v1
+    - name: Merge Pull Request
+      uses: juliangruber/merge-pull-request-action@v1
       with:
-        allow_ff: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
+        github-token: ${{ secrets.REPOSITORY_TOKEN }}
+        number: 1
+        method: squash
