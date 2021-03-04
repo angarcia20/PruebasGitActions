@@ -8,6 +8,9 @@ jobs:
     if: github.event.review.state == 'approved' || !github.event.review
     runs-on: ubuntu-latest
     steps:
+      - name: echo state event
+        run: |
+            echo "state from event review '${{ github.event.review.state }}'"
       - uses: reitermarkus/automerge@v1
         with:
           token: ${{ secrets.REPOSITORY_TOKEN }}
@@ -16,5 +19,3 @@ jobs:
           required-labels: automerge
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true
-          run: |
-             echo "state from event review '${{ github.event.review.state }}'"
