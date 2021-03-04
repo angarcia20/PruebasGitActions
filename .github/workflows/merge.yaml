@@ -16,3 +16,5 @@ jobs:
           required-labels: automerge
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: true
+          run: |
+             echo "state from event review '${{ github.event.review.state }}'"
