@@ -3,16 +3,16 @@ on:
   pull_request_review:
     types:
       - submitted
-  check_suite:
-    types:
-      - completed
-  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-    - name: Merge me!
-      uses: ridedott/merge-me-action@v1
-      with:
+    - name: Trigger pr-autobuild action
+      uses: nikhilaii93/pr-autobuild@master
+      env:
         GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
-        MERGE_METHOD: MERGE
+        GITHUB_NAME: andres-lgr
+        DEFAULT_APPROVAL_COUNT_ENV: 1
+        BUILD_COMMENT_ENV: "OK to test"
+        PR_LABEL_ENV: RELEASE
+        DEFAULT_MERGE: squash
