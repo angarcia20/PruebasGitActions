@@ -10,7 +10,7 @@ jobs:
     - name: Trigger pr-autobuild action
       uses: nikhilaii93/pr-autobuild@master
       env:
-        GITHUB_TOKEN: ${{ secrets.bot_token }}
+        GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
         DEFAULT_APPROVAL_COUNT_ENV: 1
         BUILD_COMMENT_ENV: "OK to test"
         PR_LABEL_ENV: RELEASE
