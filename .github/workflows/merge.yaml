@@ -11,6 +11,7 @@ jobs:
       uses: nikhilaii93/pr-autobuild@master
       env:
         GITHUB_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
+        GITHUB_NAME: andres-lgr
         DEFAULT_APPROVAL_COUNT_ENV: 1
         BUILD_COMMENT_ENV: "OK to test"
         PR_LABEL_ENV: RELEASE
