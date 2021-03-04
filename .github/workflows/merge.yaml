@@ -15,4 +15,4 @@ jobs:
           merge-method: rebase
           required-labels: automerge
           pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: false
+          dry-run: true
