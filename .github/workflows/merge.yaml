@@ -3,17 +3,15 @@ on:
   pull_request_review:
     types:
       - submitted
-  check_suite:
-    types:
-      - completed
-  status: {}
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
-    - name: Merge Pull Request
-      uses: juliangruber/merge-pull-request-action@v1
-      with:
-        github-token: ${{ secrets.REPOSITORY_TOKEN }}
-        number: 1
-        method: squash
+    - name: Trigger pr-autobuild action
+      uses: nikhilaii93/pr-autobuild@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.bot_token }}
+        DEFAULT_APPROVAL_COUNT_ENV: 1
+        BUILD_COMMENT_ENV: "OK to test"
+        PR_LABEL_ENV: RELEASE
+        DEFAULT_MERGE: squash
