@@ -12,7 +12,6 @@ jobs:
         with:
           token: ${{ secrets.REPOSITORY_TOKEN }}
           merge-method: merge
-          do-not-merge-labels: never-merge
-          required-labels: automerge
+          required-labels: merge
           pull-request: ${{ github.event.inputs.pull-request }}
           dry-run: false
