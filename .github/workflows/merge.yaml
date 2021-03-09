@@ -1,13 +1,22 @@
 name: push on main
 on:
-   pull_request:
-    types:
-      - closed
+   pull_request_review:
+    types: 
+      - submitted
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Test
-      run: echo "esto significa que si imprime la accion"
+    - name: Imprimir version del git
+      run: |
+        git --version
+        echo "Path is ... $PATH"
+    - name: merge
+      uses: mtanzi/action-automerge@v1
+      id: merge
+      with:
+        github_token: ${{ secrets.REPOSITORY_TOKEN }}
+        source: 'develop'
+        target: 'main'
