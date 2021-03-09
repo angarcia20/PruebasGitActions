@@ -15,4 +15,5 @@ jobs:
         echo "Path is ... $PATH"
     - name: impresion branches
       run: |
-        git branch
+        git checkout refs/heads/master
+        git merge develop
