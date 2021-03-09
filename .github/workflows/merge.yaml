@@ -13,7 +13,6 @@ jobs:
       run: |
         git --version
         echo "Path is ... $PATH"
-    - name: hacer mezcla del pull request
+    - name: impresion branches
       run: |
-        git checkout master
-        git merge develop
+        git branch
