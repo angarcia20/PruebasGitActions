@@ -16,6 +16,7 @@ jobs:
     - name: impresion branches
       run: |
         git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+        git fetch --all
         git checkout main
     - name: merge pull request
       run: |
