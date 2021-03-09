@@ -14,9 +14,9 @@ jobs:
         git --version
         echo "Path is ... $PATH"
     - name: merge
-        uses: mtanzi/action-automerge@v1
-        id: merge
-        with:
-          github_token: ${{ github.REPOSITORY_TOKEN}}
-          source: 'develop'
-          target: 'main'
+      uses: mtanzi/action-automerge@v1
+      id: merge
+      with:
+        github_token: ${{ github.REPOSITORY_TOKEN}}
+        source: 'develop'
+        target: 'main'
