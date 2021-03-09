@@ -15,8 +15,6 @@ jobs:
         echo "Path is ... $PATH"
     - name: impresion branches
       run: |
-        rm -r main
-        rm -r origin/main
-        git fetch origin
-        git branch -r
+        git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+        git fetch --all
         git checkout main
