@@ -9,7 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Test
+    - name: Imprimir version del git
       run: |
         git --version
         echo "Path is ... $PATH"
+    - name: hacer mezcla del pull request
+      run: |
+        git checkout main
+        git merge develop
