@@ -13,8 +13,7 @@ jobs:
       run: |
         git --version
         echo "Path is ... $PATH"
-    - name: impresion rama 
-      env:
-        BRANCH: ${{ github.ref }}
+    - name: hacer mezcla del pull request
       run: |
-        echo "Branch is ... ${BRANCH}"
+        git checkout master
+        git merge develop
