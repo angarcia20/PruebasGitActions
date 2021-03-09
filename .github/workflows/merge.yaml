@@ -20,3 +20,10 @@ jobs:
         github_token: ${{ secrets.REPOSITORY_TOKEN }}
         source: 'develop'
         target: 'main'
+  verification:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: print state
+      run: |
+        echo "$GITHUB_EVENT_NAME"
