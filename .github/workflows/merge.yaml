@@ -15,8 +15,8 @@ jobs:
         echo "Path is ... $PATH"
     - name: impresion branches
       run: |
-        rm -r master
-        rm -r origin/master
+        rm -r main
+        rm -r origin/main
         git fetch origin
         git branch -r
-        git checkout master
+        git checkout main
