@@ -15,6 +15,6 @@ jobs:
         echo "Path is ... $PATH"
     - name: impresion rama 
       env:
-        BRANCH: ${{ github.head_ref }}
+        BRANCH: ${{ github.ref }}
       run: |
         echo "Branch is ... ${BRANCH}"
